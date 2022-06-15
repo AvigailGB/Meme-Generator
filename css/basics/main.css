@@ -1,0 +1,38 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.logo{
+    font-family: 'logoFont';
+    color: white;
+    line-height: 0;
+}
+/* h2 {
+    font-size: 1.75em;
+    margin: 0 0 2.8125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0 0 2em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr4);
+}
+
+a:hover {
+    color: var(--clr2);
+} */
+

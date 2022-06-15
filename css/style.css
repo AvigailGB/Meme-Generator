@@ -1,0 +1,8 @@
+@import 'style/founts.css';
+@import 'style/vars.css';
+
+@import 'basics/main.css';
+@import 'basics/helpers.css';
+@import 'basics/layout.css';
+
+@import 'compenents/header.css';
