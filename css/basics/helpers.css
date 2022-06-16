@@ -2,15 +2,15 @@
     display: flex;
 }
 
-.flex .align-center {
+.align-center {
     align-items: center;
 }
 
-.flex .center {
+.center {
     justify-content: center;
 }
 
-.flex .space-between {
+.space-between {
     justify-content: space-between;
 }
 

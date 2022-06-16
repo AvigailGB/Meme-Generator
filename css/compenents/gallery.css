@@ -1,0 +1,14 @@
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 176px);
+    /* width: 139px; */
+    gap: 10px;
+}
+
+
+.gallery img{
+    height: 35%;
+    width: auto;
+    font-size: 20px;
+    /* object-fit: cover; */
+}

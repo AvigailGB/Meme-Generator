@@ -1,0 +1,14 @@
+.footer{
+    background-color: var(--clr1);
+    height: 103px;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer h3{
+    font-size: 9.5px;
+    font-weight: 100;
+    margin: 15px;
+}

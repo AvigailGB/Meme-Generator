@@ -1,0 +1,30 @@
+
+.my-canvas{
+    background-color: bisque;
+    width: 270px;
+    height: 275px;
+    margin: 0;
+}
+
+.editor .tool{
+    background-color: #fff;
+    color: black;
+    border: 0px;
+    border-radius: 6px;
+    padding: 5px;
+    height: 30px;
+    margin: 0 5px 5px;
+}
+
+/* .editor .txt{
+    width: 186px;
+    margin: 0 50px 5px;
+} */
+
+.editor .tool-basics{
+    margin-bottom: 20px;
+}
+
+.editor .tool img{
+    width: 20px;
+}

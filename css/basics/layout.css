@@ -1,4 +1,9 @@
 .main-layout{
-    padding-inline-start: 1.562rem;
-    padding-inline-end: 1.562rem;
+    /* padding-inline-start: 1.562rem;
+    padding-inline-end: 1.562rem; */
+    max-width: 500px;
+}
+
+.tools-layout{
+    max-width: 173px; 
 }

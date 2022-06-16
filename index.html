@@ -7,24 +7,59 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Meme Generator</title>
 </head>
-<body onload="init()">
-    <header class="header flex">
-        <div class="header-container flex align-center center main-layout space-between">
+<body onload="onInit()">
+    <header class="header">
+        <div class="header-container main-layout align-center flex space-between">
             <div class="logo ">memegen</div>
             <ul class="nav-bar clean-list flex">
                 <li><a href="#" class="active">Gallery</a></li>
+                <li><a href="#">|</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </div>
     </header>
 
-    <main>
+    <main class="main-layout">
         <section class="gallery"></section>
 
-        <section class="editor"></section>
+        <section class="editor">
+            <div class="editor-section flex">
+                <div class="canvas-container">
+                <canvas class="my-canvas"></canvas>
+                </div>
+                <div class="editor-tools tools-layout">
+                   <input class="tool txt" type="text" name="txt-meme" oninput="onChangeTxt({name: this.value})" placeholder="" />
+                   <div class="tool-basics flex center">
+                       <button class="tool up-down" onclick="onMoveBetweenLine()"><img src="img/img-tools/up-and-down-opposite-double-arrows-side-by-side.png"/></button>
+                       <button class="tool add" onclick="onAddLine()"><img src="img/img-tools/add.png"/></button>
+                       <button class="tool delete" onclick="onDeleteLine()"><img src="img/img-tools/trash.png"/></button>
+                   </div>
+                   <div class="more-tools">
+                       <button class="tool increase"><img src="img/img-tools/increase font - icon.png"/></button>
+                       <button class="tool decrease"><img src="img/img-tools/decrease font - icon.png"/></button>
+                       <button class="tool left-txt"><img src="img/img-tools/align-to-left.png"/></button>
+                       <button class="tool center-txt"><img src="img/img-tools/center-text-alignment.png"/></button>
+                       <button class="tool right-txt"><img src="img/img-tools/align-to-right.png"/></button>
+                       <button class="tool right-txt"><img src="img/img-tools/text stroke.png"/></button>
+                       <!-- <label for="color"><img src="img/img-tools/paint-board-and-brush.png"/></label> -->
+                       <input class="tool color" id="color" type="color" name="color-txt-meme" oninput="onChangeColor({name: this.value})" value="#ff0000" />
+                   </div>
+                </div>
+            </div>
+            
+        </section>
     </main>
+
+    <footer class="footer flex align-center center">
+        <div class="logo ">memegen</div>
+        <h3>all right resaved 2022</h3>
+    </footer>
     
 
+    <script src="js/services/util-service.js"></script>
+    <script src="js/services/gallery-service.js"></script>
+    <script src="js/servises/meme-service.js"></script>
+    <script src="js/gallery-controler.js"></script>
     <script src="js/meme-controler.js"></script>
     
 </body>

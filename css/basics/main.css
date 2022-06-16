@@ -9,6 +9,13 @@ html {
 body {
     margin: 0;
     font-size: 1rem;
+    background-color: #e3e3e3;
+    color: white;
+}
+
+main {
+    margin: auto;
+    margin-top: 13px;
 }
 
 .logo{
@@ -16,12 +23,7 @@ body {
     color: white;
     line-height: 0;
 }
-/* h2 {
-    font-size: 1.75em;
-    margin: 0 0 2.8125rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+
 
 p {
     margin: 0 0 2em;
@@ -29,10 +31,11 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--clr4);
+    color: white;
 }
 
 a:hover {
-    color: var(--clr2);
-} */
+    /* color: #05050584; */
+    color: rgb(251, 213, 174);
+} 
 
