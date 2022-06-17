@@ -13,8 +13,11 @@
         max-width: 550px;
     }
 
-    .tools-layout{
-        padding-inline-start: 3.125rem;
-        padding-inline-end: 3.125rem; 
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(3, 176px);
+        grid-template-rows: repeat(6, 176px);
+        /* width: 139px; */
+        gap: 10px;
     }
 }

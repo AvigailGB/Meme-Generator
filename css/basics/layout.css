@@ -2,8 +2,11 @@
     /* padding-inline-start: 1.562rem;
     padding-inline-end: 1.562rem; */
     max-width: 500px;
+    margin: auto;
 }
 
 .tools-layout{
-    max-width: 173px; 
+    max-width: 196px; 
+    margin: auto;
+    margin-top: 0;
 }

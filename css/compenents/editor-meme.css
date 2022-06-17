@@ -13,16 +13,16 @@
     border-radius: 6px;
     padding: 5px;
     height: 30px;
+    margin: 0 2.5px 5px;
+}
+
+.editor .txt{
+    width: 186px;
     margin: 0 5px 5px;
 }
 
-/* .editor .txt{
-    width: 186px;
-    margin: 0 50px 5px;
-} */
-
 .editor .tool-basics{
-    margin-bottom: 20px;
+    margin: 0 5px 20px;
 }
 
 .editor .tool img{
