@@ -45,20 +45,25 @@ function drawImg(memeUrl) {
 function drawTexts() {
     var txts = getLines()
     txts.forEach((txt, idx) => {
-        drawText(txt.txt, txt.color, 10, txt.pos.y, idx)
+        drawText(txt.txt, txt.color, txt.strokeColor, txt.pos.x, txt.pos.y, txt.size, idx)
     })
 }
 
-function drawText(text, color, x, y, idx) {
-    var currLineIdx = getCurrLineIdx() 
-    if(currLineIdx === idx){
+function drawText(text, color, strokeColor, x, y, size, idx) {
+    // console.log('text',text)
+    var currLineIdx = getCurrLineIdx()
+    if (currLineIdx === idx) {
         gCtx.fillStyle = '#05050584'
-    gCtx.fillRect(x, y - 20, x + 240, y)
+        gCtx.fillRect(x, y-20, x + (gCtx.measureText(text).width), y)
+        // console.log('y, x',y, x)
     }
-    gCtx.lineWidth = 1;
-    gCtx.strokeStyle = 'black';
-    gCtx.fillStyle = color;
-    gCtx.font = '20px Arial';
+    gCtx.measureText(text).width
+    // console.log('gCtx.measureText(text).width', gCtx.measureText(text).width)
+    gCtx.lineWidth = 1
+    gCtx.strokeStyle = strokeColor
+    gCtx.fillStyle = color
+    var txts = getLines()
+    gCtx.font = size
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
@@ -72,7 +77,7 @@ function addListeners() {
 }
 
 function addMouseListeners() {
-    // gElCanvas.addEventListener('mousemove', onMove)
+    gElCanvas.addEventListener('mousemove', onMove)
     gElCanvas.addEventListener('mousedown', onDown)
     gElCanvas.addEventListener('mouseup', onUp)
 }
@@ -93,14 +98,31 @@ function getEvPos(ev) {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    if (!isTxtClicked(pos)) return
-    // setCircleDrag(true)
-    // gStartPos = pos
-    var currLineIdx = getCurrLineIdx()
+    var idxClicked = isTxtClicked(pos)
+    if ( idxClicked === -1) return
+    resetCurrLineIdx(idxClicked)
+    setLineDrage(true)
     document.body.style.cursor = 'grabbing'
     var memeLine = getLines()
     var elInput = document.querySelector('input')
-    elInput.placeholder = memeLine[currLineIdx].txt
+    elInput.placeholder = memeLine[idxClicked].txt
+    renderMeme()
+}
+
+function onMove(ev) {
+    const lines = getLines()
+    const idx = getCurrLineIdx()
+    if (lines[idx].isDrag) {
+        const pos = getEvPos(ev)
+        //Calc the delta , the diff we moved
+        const dx = pos.x - lines[idx].pos.x
+        const dy = pos.y - lines[idx].pos.y
+        moveLine(dx, dy)
+        //Save the last pos , we remember where we`ve been and move accordingly
+        lines[idx].pos = pos
+        //The canvas is render again after every move
+        renderMeme()
+    }
 }
 
 function onChangeTxt(txt) {
@@ -113,24 +135,35 @@ function onChangeTxt(txt) {
 function onUp() {
     // setCircleDrag(false)
     document.body.style.cursor = 'grab'
+    setLineDrage(false)
 }
 
-function onChangeColor(color){
+function onChangeColorStroke(color){
+    setColorStroke(color.name)
+    renderMeme()
+}
+
+function onChangeColor(color) {
     setColor(color.name)
     renderMeme()
 }
 
-function onAddLine(){
+function onAddLine() {
     addLine()
     renderMeme()
 }
 
-function onMoveBetweenLine(){
+function onMoveBetweenLine() {
     moveBetweenLine()
     renderMeme()
 }
 
-function onDeleteLine(){
+function onDeleteLine() {
     deleteLine()
+    renderMeme()
+}
+
+function onChangeSizeTxt(range) {
+    changeSizeTxt(range)
     renderMeme()
 }

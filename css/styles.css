@@ -1,8 +1,21 @@
 
-@import 'style/founts.css';
+/* @import 'style/founts.css';
 
 @import 'style/vars.css';
 
 @import 'basics/main.css';
 
+@import 'compenents/header.css'; */
+@import 'style/founts.css';
+@import 'style/vars.css';
+
+@import 'basics/main.css';
+@import 'basics/helpers.css';
+@import 'basics/layout.css';
+
 @import 'compenents/header.css';
+@import 'compenents/gallery.css';
+@import 'compenents/editor-meme.css';
+@import 'compenents/footer.css';
+
+@import 'mq/mq.css'

@@ -13,7 +13,8 @@
     border-radius: 6px;
     padding: 5px;
     height: 30px;
-    margin: 0 2.5px 5px;
+    margin: 0 5px 5px;
+    width: 30px;
 }
 
 .editor .txt{
@@ -25,6 +26,21 @@
     margin: 0 5px 20px;
 }
 
+.editor .more-tools{
+    display: grid;
+    /* grid-auto-columns: 40px; */
+    grid-template-columns: repeat(5, 40px);
+}
+
 .editor .tool img{
     width: 20px;
 }
+.editor .tool.color{
+    display: none;
+}
+
+.editor label{
+    display: inline-block;
+}
+
+

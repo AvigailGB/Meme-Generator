@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Meme Generator</title>
 </head>
 <body onload="onInit()">
@@ -35,14 +35,15 @@
                        <button class="tool delete" onclick="onDeleteLine()"><img src="img/img-tools/trash.png"/></button>
                    </div>
                    <div class="more-tools">
-                       <button class="tool increase"><img src="img/img-tools/increase font - icon.png"/></button>
-                       <button class="tool decrease"><img src="img/img-tools/decrease font - icon.png"/></button>
+                       <button class="tool increase" onclick="onChangeSizeTxt(1)"><img src="img/img-tools/increase font - icon.png"/></button>
+                       <button class="tool decrease" onclick="onChangeSizeTxt(-1)"><img src="img/img-tools/decrease font - icon.png"/></button>
                        <button class="tool left-txt"><img src="img/img-tools/align-to-left.png"/></button>
                        <button class="tool center-txt"><img src="img/img-tools/center-text-alignment.png"/></button>
                        <button class="tool right-txt"><img src="img/img-tools/align-to-right.png"/></button>
-                       <button class="tool right-txt"><img src="img/img-tools/text stroke.png"/></button>
-                       <!-- <label for="color"><img src="img/img-tools/paint-board-and-brush.png"/></label> -->
-                       <input class="tool color" id="color" type="color" name="color-txt-meme" oninput="onChangeColor({name: this.value})" value="#ff0000" />
+                       <label class="tool flex center align-center" for="stroke"><img src="img/img-tools/text stroke.png"/></label>
+                       <input class="tool color" id="stroke" type="color" name="color-txt-meme" oninput="onChangeColorStroke({name: this.value})" />
+                       <label class="tool flex center align-center" for="color"><img src="img/img-tools/paint-board-and-brush.png"/></label>
+                       <input class="tool color" id="color" type="color" name="color-txt-meme" oninput="onChangeColor({name: this.value})" />
                    </div>
                 </div>
             </div>
